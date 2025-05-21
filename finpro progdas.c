@@ -20,8 +20,35 @@ void inputDesa (){
     
 }
 
-void inputData (){
+Desa inputData(Desa desa) {
+    printf("Masukkan jumlah warga usia SD	: ");
+    scanf("%d", &desa.warga_sd);
     
+    printf("Masukkan jumlah SD tersedia	: ");
+    scanf("%d", &desa.sd_tersedia);
+    
+    printf("Masukkan total kapasitas SD	: ");
+    scanf("%d", &desa.kapasitas_sd);
+    
+    printf("\nMasukkan jumlah warga usia SMP	: ");
+    scanf("%d", &desa.warga_smp);
+    
+    printf("Masukkan jumlah SMP tersedia	: ");
+    scanf("%d", &desa.smp_tersedia);
+    
+    printf("Masukkan total kapasitas SMP	: ");
+    scanf("%d", &desa.kapasitas_smp);
+    
+    printf("\nMasukkan jumlah warga usia SMA	: ");
+    scanf("%d", &desa.warga_sma);
+    
+    printf("Masukkan jumlah SMA tersedia	: ");
+    scanf("%d", &desa.sma_tersedia);
+    
+    printf("Masukkan total kapasitas SMA	: ");
+    scanf("%d", &desa.kapasitas_sma);
+
+    return desa;
 }
 
 void analisisDesa (){
