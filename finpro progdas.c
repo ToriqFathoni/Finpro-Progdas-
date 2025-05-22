@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+//toriq
 typedef struct {
     char nama[50];
     int warga_sd;
@@ -16,6 +16,7 @@ typedef struct {
     int kapasitas_sma;
 } Desa;
 
+//toriq & abyan (masukin input dari user)
 void inputDesa(Desa desa[], int i) {
     printf("Masukkan Nama Desa: ");
     scanf(" %[^\n]", desa[i].nama);
@@ -42,38 +43,7 @@ void inputDesa(Desa desa[], int i) {
     scanf("%d", &desa[i].kapasitas_sma);
 
 }
-
-Desa inputData(Desa desa) {
-    printf("Masukkan jumlah warga usia SD	: ");
-    scanf("%d", &desa.warga_sd);
-    
-    printf("Masukkan jumlah SD tersedia	: ");
-    scanf("%d", &desa.sd_tersedia);
-    
-    printf("Masukkan total kapasitas SD	: ");
-    scanf("%d", &desa.kapasitas_sd);
-    
-    printf("\nMasukkan jumlah warga usia SMP	: ");
-    scanf("%d", &desa.warga_smp);
-    
-    printf("Masukkan jumlah SMP tersedia	: ");
-    scanf("%d", &desa.smp_tersedia);
-    
-    printf("Masukkan total kapasitas SMP	: ");
-    scanf("%d", &desa.kapasitas_smp);
-    
-    printf("\nMasukkan jumlah warga usia SMA	: ");
-    scanf("%d", &desa.warga_sma);
-    
-    printf("Masukkan jumlah SMA tersedia	: ");
-    scanf("%d", &desa.sma_tersedia);
-    
-    printf("Masukkan total kapasitas SMA	: ");
-    scanf("%d", &desa.kapasitas_sma);
-
-    return desa;
-}
-
+//fernanda (analisis untuk tiap desa)
 void analisisDesa (int jumlah_desa, Desa desa[]){
     for (int i = 0; i < jumlah_desa; i++){
         printf("\nAnalis desa %s: \n", desa[i].nama);
@@ -122,7 +92,7 @@ void analisisDesa (int jumlah_desa, Desa desa[]){
 
     }
 }
-
+//radya
 void tampilkanAnalisis() {
     char nama_kota[50];
     int jumlah_desa;
@@ -143,7 +113,7 @@ void tampilkanAnalisis() {
     analisisDesa(jumlah_desa, desa);
 }
 
-
+//toriq 
 int main (){
     char nama_kota[50];
     int jumlah_desa;
