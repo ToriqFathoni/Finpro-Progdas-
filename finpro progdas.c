@@ -40,6 +40,7 @@ void inputDesa(Desa desa[], int i) {
     scanf("%d", &desa[i].sma_tersedia);
     printf("Masukkan Rata-rata Kapasitas tiap SMA: ");
     scanf("%d", &desa[i].kapasitas_sma);
+
 }
 
 Desa inputData(Desa desa) {
@@ -81,53 +82,73 @@ void analisisDesa (int jumlah_desa, Desa desa[]){
         if (total_kapasitas_sd < desa[i].warga_sd){
             int kekurangan = desa[i].warga_sd - total_kapasitas_sd;
             if (kekurangan < 100){
-                printf("- Desa ini membutuhkan tambahan *Kelas* untuk siswa SD (kekurangan untuk %d siswa)\n", kekurangan);
+                printf("- Desa ini membutuhkan tambahan KELAS untuk siswa SD (kekurangan untuk %d siswa)\n", kekurangan);
             }
             else {
-                printf("- Desa ini membutuhkan tambahan *Sekolah* untuk siswa SD (kekurangan untuk %d siswa)\n", kekurangan);
+                printf("- Desa ini membutuhkan tambahan SEKOLAH untuk siswa SD (kekurangan untuk %d siswa)\n", kekurangan);
             }
         }
         else {
-            printf("- Kapasitas SD *Mencukupi*.\n");
+            printf("- Kapasitas SD MENCUKUPI.\n");
         }
 
         int total_kapasitas_smp = desa[i].smp_tersedia * desa[i].kapasitas_smp;
         if (total_kapasitas_smp < desa[i].warga_smp){
             int kekurangan = desa[i].warga_smp - total_kapasitas_smp;
             if (kekurangan < 100){
-                printf("- Desa ini membutuhkan tambahan *Kelas* untuk siswa SMP (kekurangan untuk %d siswa)\n", kekurangan);
+                printf("- Desa ini membutuhkan tambahan KELAS untuk siswa SMP (kekurangan untuk %d siswa)\n", kekurangan);
             }
             else{
-                printf("- Desa ini membutuhkan tambahan *Sekolah* untuk siswa SMP (kekurangan untuk %d siswa)\n", kekurangan);
+                printf("- Desa ini membutuhkan tambahan SEKOLAH untuk siswa SMP (kekurangan untuk %d siswa)\n", kekurangan);
             }
         }
         else{
-            printf("- Kapasitas SMP *Mencukupi*.\n");
+            printf("- Kapasitas SMP Mencukupi.\n");
         }
 
         int total_kapasitas_sma = desa[i].sma_tersedia * desa[i].kapasitas_sma;
         if (total_kapasitas_sma < desa[i].warga_sma){
             int kekurangan = desa[i].warga_sma - total_kapasitas_sma;
             if (kekurangan < 100){
-                printf("- Desa ini membutuhkan tambahan *Kelas* untuk siswa SMA (kekurangan untuk %d siswa)\n", kekurangan);
+                printf("- Desa ini membutuhkan tambahan KELAS untuk siswa SMA (kekurangan untuk %d siswa)\n", kekurangan);
             }
             else{
-                printf("- Desa ini membutuhkan tambahan *Sekolah* untuk siswa SMA (kekurangan untuk %d siswa)\n", kekurangan);
+                printf("- Desa ini membutuhkan tambahan SEKOLAH untuk siswa SMA (kekurangan untuk %d siswa)\n", kekurangan);
             }
         }
         else{
-            printf("- Kapasitas SMA *Mencukupi*.\n");
+            printf("- Kapasitas SMA Mencukupi.\n");
         }
 
     }
 }
 
-void tampilkanAnalisis (){
-    
+void tampilkanAnalisis() {
+    char nama_kota[50];
+    int jumlah_desa;
+    Desa desa[100];
+
+    printf("Masukkan Nama Kota: ");
+    scanf(" %[^\n]", nama_kota);
+
+    printf("Masukkan Jumlah Desa: ");
+    scanf("%d", &jumlah_desa);
+
+    for (int i = 0; i < jumlah_desa; i++) {
+        printf("\n--- Input data untuk Desa ke-%d ---\n", i + 1);
+        inputDesa(desa, i);
+    }
+
+    printf("\n\n=== Analisis Pendidikan untuk Kota %s ===\n", nama_kota);
+    analisisDesa(jumlah_desa, desa);
 }
+
 
 int main (){
     char nama_kota[50];
     int jumlah_desa;
     Desa desa[100]; 
+
+    tampilkanAnalisis();
+
 }
