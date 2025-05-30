@@ -77,7 +77,7 @@ Desa inputData(Desa desa) {
 // Fungsi hitung rasio untuk persentase atau perbandingan
 float rasio(float a, float b) {
     return (b == 0) ? 0 : a / b;
-}
+} 
 
 // Tampilkan kategori desa setelah analisis
 void tampilkan(Desa desa[], int index) {
