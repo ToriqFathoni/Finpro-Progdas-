@@ -132,53 +132,69 @@ float rasio(float a, float b) {
     return (b == 0) ? 0 : a / b;
 }
 
+// Fungsi hitung rasio untuk persentase atau perbandingan
+float rasio(float a, float b) {
+    return (b == 0) ? 0 : a / b;
+} 
+
+// Tampilkan kategori desa setelah analisis
+void tampilkan(Desa desa[], int index) {
+    printf("\n");
+    printf("+----------------------------------------------------------+\n");
+    printf("|                                                          |\n");
+    printf("|        HASIL ANALISIS PENDIDIKAN DESA %-30s |\n", desa[index].nama);
+    printf("|                                                          |\n");
+    printf("|        Kategori Pendidikan : %-20s           |\n", desa[index].kategori);
+    printf("|                                                          |\n");
+    printf("+----------------------------------------------------------+\n");
+}
+
+// Analisis kebutuhan infrastruktur sekolah (SD, SMP, SMA)
+void analisisDesa(int jumlah_desa, Desa desa[]) {
+    for (int i = 0; i < jumlah_desa; i++) {
+        printf("+----------------------------------------------------------+\n");
+        printf("|                                                          |\n");
+        printf("|        ANALISIS INFRASTRUKTUR DESA %-30s |\n", desa[i].nama);
+        printf("|                                                          |\n");
+        printf("+----------------------------------------------------------+\n");
+        
 //fernanda (analisis untuk tiap desa)
 void analisisDesa (int jumlah_desa, Desa desa[]){
     for (int i = 0; i < jumlah_desa; i++){
         printf("\nAnalis desa %s: \n", desa[i].nama);
 
         int total_kapasitas_sd = desa[i].sd_tersedia * desa[i].kapasitas_sd;
-        if (total_kapasitas_sd < desa[i].warga_sd){
+        if (total_kapasitas_sd < desa[i].warga_sd) {
             int kekurangan = desa[i].warga_sd - total_kapasitas_sd;
-            if (kekurangan < 100){
-                printf("- Desa ini membutuhkan tambahan KELAS untuk siswa SD (kekurangan untuk %d siswa)\n", kekurangan);
-            }
-            else {
-                printf("- Desa ini membutuhkan tambahan SEKOLAH untuk siswa SD (kekurangan untuk %d siswa)\n", kekurangan);
-            }
-        }
-        else {
-            printf("- Kapasitas SD MENCUKUPI.\n");
+            if (kekurangan < 100)
+                printf("  Tambahan KELAS SD dibutuhkan (%d siswa)\n", kekurangan);
+            else
+                printf("  Tambahan SEKOLAH SD dibutuhkan (%d siswa)\n", kekurangan);
+        } else {
+            printf("  Kapasitas SD mencukupi\n");
         }
 
         int total_kapasitas_smp = desa[i].smp_tersedia * desa[i].kapasitas_smp;
-        if (total_kapasitas_smp < desa[i].warga_smp){
+        if (total_kapasitas_smp < desa[i].warga_smp) {
             int kekurangan = desa[i].warga_smp - total_kapasitas_smp;
-            if (kekurangan < 100){
-                printf("- Desa ini membutuhkan tambahan KELAS untuk siswa SMP (kekurangan untuk %d siswa)\n", kekurangan);
-            }
-            else{
-                printf("- Desa ini membutuhkan tambahan SEKOLAH untuk siswa SMP (kekurangan untuk %d siswa)\n", kekurangan);
-            }
-        }
-        else{
-            printf("- Kapasitas SMP Mencukupi.\n");
+            if (kekurangan < 100)
+                printf("  Tambahan KELAS SMP dibutuhkan (%d siswa)\n", kekurangan);
+            else
+                printf("  Tambahan SEKOLAH SMP dibutuhkan (%d siswa)\n", kekurangan);
+        } else {
+            printf("  Kapasitas SMP mencukupi\n");
         }
 
         int total_kapasitas_sma = desa[i].sma_tersedia * desa[i].kapasitas_sma;
-        if (total_kapasitas_sma < desa[i].warga_sma){
+        if (total_kapasitas_sma < desa[i].warga_sma) {
             int kekurangan = desa[i].warga_sma - total_kapasitas_sma;
-            if (kekurangan < 100){
-                printf("- Desa ini membutuhkan tambahan KELAS untuk siswa SMA (kekurangan untuk %d siswa)\n", kekurangan);
-            }
-            else{
-                printf("- Desa ini membutuhkan tambahan SEKOLAH untuk siswa SMA (kekurangan untuk %d siswa)\n", kekurangan);
-            }
+            if (kekurangan < 100)
+                printf("  Tambahan KELAS SMA dibutuhkan (%d siswa)\n", kekurangan);
+            else
+                printf("  Tambahan SEKOLAH SMA dibutuhkan (%d siswa)\n", kekurangan);
+        } else {
+            printf("  Kapasitas SMA mencukupi\n");
         }
-        else{
-            printf("- Kapasitas SMA Mencukupi.\n");
-        }
-
     }
 }
 //radya
@@ -208,6 +224,6 @@ int main (){
     int jumlah_desa;
     Desa desa[100]; 
 
-    tampilkanAnalisis();
+    tampilkan();
 
 }
