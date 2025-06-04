@@ -127,6 +127,11 @@ void inputDesa(Desa desa[], int i) {
     printf("+-----------------------------------------------------+\n");
 }
 
+//abyan 
+float rasio(float a, float b) {
+    return (b == 0) ? 0 : a / b;
+}
+
 //fernanda (analisis untuk tiap desa)
 void analisisDesa (int jumlah_desa, Desa desa[]){
     for (int i = 0; i < jumlah_desa; i++){
