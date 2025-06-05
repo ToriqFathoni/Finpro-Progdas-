@@ -16,12 +16,10 @@ typedef struct {
     int sma_tersedia;
     int kapasitas_sma;
 
-    int penduduk;
     int lulusan_d3;
     int lulusan_s1;
     int lulusan_s2;
 
-    int sekolah_ada;
     int total_guru;
     int guru_pns;
 
